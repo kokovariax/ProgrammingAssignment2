@@ -9,6 +9,8 @@
 makeCacheMatrix <- function(x = matrix()) {
 ## This function creates a special "matrix" object that can cache its inverse
 
+
+
    makeCacheMatrix <- function(x = matrix()) { ## define the argument with default mode of "matrix"
     inv <- NULL                             ## initialize inv as NULL; will hold value of matrix inverse 
     set <- function(y) {                    ## define the set function to assign new 
@@ -17,11 +19,13 @@ makeCacheMatrix <- function(x = matrix()) {
     }
     get <- function() x                     ## define the get fucntion - returns value of the matrix argument
 
-    setinverse <- function(inverse) inv <<- inverse  ## assigns value of inv in parent environment
-    getinverse <- function() inv                     ## gets the value of inv where called
+    setinverse <- function(inverse) inv <<- inverse     ## assigns value of inv in parent environment
+    getinverse <- function() inv                         ## gets the value of inv where called
     list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)  ## you need this in order to refer 
                                                                                   ## to the functions with the $ operator
 }
+
+
 
 ## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above.
 ## If the inverse has already been calculated (and the matrix has not changed),
